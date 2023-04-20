@@ -1,11 +1,18 @@
 let fr=20;
 let flock;
 
+function preload() {
+  result = loadStrings('keyword.txt');
+  myFont = loadFont('SourceCodePro-Regular.ttf');
+  myFontBold = loadFont('SourceCodePro-Bold.ttf');
+  myFontExtraBold = loadFont('SourceCodePro-ExtraBold.ttf');
+}
 function setup() {
   frameRate(fr);
-  createCanvas(1000, 500);
-  createP("Drag the mouse to generate new boids.");
-
+  createCanvas(750, 576);
+  let p =createP("Drag the mouse to generate new boids.");
+  p.style("font-family", myFontBold);
+  VideoRecorder.addButton();
   flock = new Flock();
   // Add an initial set of boids into the system
   for (let i = 0; i < 50; i++) {
@@ -17,6 +24,7 @@ function setup() {
 function draw() {
   background(0);
   flock.run();
+  
 }
 
 // Add a new boid into the System
@@ -112,17 +120,12 @@ Boid.prototype.seek = function(target) {
   steer.limit(this.maxforce);  // Limit to maximum steering force
   return steer;
 }
-function preload() {
-  result = loadStrings('keyword.txt');
-  myFont = loadFont('SourceCodePro-Regular.ttf');
-  myFontBold = loadFont('SourceCodePro-Bold.ttf');
-  myFontExtraBold = loadFont('SourceCodePro-ExtraBold.ttf');
-}
+
 Boid.prototype.render = function() {
   // Draw a triangle rotated in the direction of velocity
   let theta = this.velocity.heading() + radians(90);
   push();
-  const couleur = ["#4EC234", "#70CC5C", "#265E19", "#416639", "#3A8F27" ];
+  const couleur = ["#4EC234","#4EC234","#4EC234","#4EC234", "#70CC5C", "#265E19", "#416639", "#3A8F27" ];
   stroke(couleur);
   fill(random(couleur));
   translate(this.position.x, this.position.y);
@@ -141,6 +144,7 @@ Boid.prototype.render = function() {
   let names = random(tableau);
     textFont(myFontExtraBold);
     text((names), 20, 30);
+    
   
   
 
@@ -236,3 +240,4 @@ Boid.prototype.cohesion = function(boids) {
     return createVector(0, 0);
   }
 }
+
