@@ -1,4 +1,6 @@
 # esthetique algo boids
+
+Lien git : https://github.com/Ninagail/Boids.git
  
 La vitesse de changement des mots raconte le monde dans lequel nous vivons. En effet, nous vivons dans un flux d'informations continue et il devient parfois difficile de discerner le vrai du faux, de retirer les informations importantes et de savoir où se renseigner. 
 Particulièrement pour ce qui est du réchauffement climatique qui est un sujet très abordé par les médias aujourd’hui. Il est donc parfois compliqué de saisir tous les enjeux et de faire tri dans les données que l’on nous apporte, cela est dû au trop grand flux d’information qui s’avèrent parfois même contradictoire en fonction des différents médias que l’on consulte. 

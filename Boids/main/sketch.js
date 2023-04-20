@@ -19,6 +19,7 @@ function setup() {
     let b = new Boid(width / 2,height / 2);
     flock.addBoid(b);
   }
+  
 }
 
 function draw() {
@@ -125,29 +126,21 @@ Boid.prototype.render = function() {
   // Draw a triangle rotated in the direction of velocity
   let theta = this.velocity.heading() + radians(90);
   push();
-  const couleur = ["#4EC234","#4EC234","#4EC234","#4EC234", "#70CC5C", "#265E19", "#416639", "#3A8F27" ];
+  const couleur = ["#24AE07","#2DE009","#2DE009","#2DE009","#2DE009","#136104" ];
   stroke(couleur);
   fill(random(couleur));
   translate(this.position.x, this.position.y);
   rotate(theta);
-  //beginShape();
-  //vertex(0, -this.r * 2);
-  //vertex(-this.r, this.r * 2);
-  //vertex(this.r, this.r * 2);
-  //endShape(CLOSE);
-  //text('C,a,r,b,o,n', 10, 30);
   
-  keyword = 'climate,AGW,gas,environment,USHCN,INDC,energ,temperature,carbon,pollution,co2,science,politics,health,Earth,emission,weather,fossil,fuel,sea-level rise,COP,UNFCCC,IPCC,PPM,methane,mitigation,warm,degre,cool,dioxid,barrel,oil,antarct,atmosphe,glacier,melt,antarctica,mediev,palaeo,turbin,renew,wind,megawatt,hydrogen,reactor,nuclear,green,cyclon,storm,hurrican,scheme,cultivar,endanger,coral,phytoplankton,ozon,extinct,bear,polar,vehicl,electric,car,millenni,adapt,mercuri,flood,cloud,ratif,treati,consensus,alarmist,develop,recycle,impact,conservation,forest,EPA,acid,species,simul,EIA,CLF,GHG,calcif,RGGI,NHTSA,MGP,NAAQ,NDVI,diseas,VMT,USHCN,integrity';
-  let tableau = keyword.split(",");
+  //indice 0 car .txt est un tableau
+  let tableau = result[0].split(",");
+  console.log(result);
+  
   //let names = floor(random(keyword));
   //let element = keyword[names];
   let names = random(tableau);
     textFont(myFontExtraBold);
     text((names), 20, 30);
-    
-  
-  
-
   pop();
   
 }
