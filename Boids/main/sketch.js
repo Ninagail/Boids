@@ -2,7 +2,7 @@ let fr=20;
 let flock;
 
 function preload() {
-  result = loadStrings('keyword.txt');
+  keywords = loadStrings('keyword.txt');
   myFont = loadFont('SourceCodePro-Regular.ttf');
   myFontBold = loadFont('SourceCodePro-Bold.ttf');
   myFontExtraBold = loadFont('SourceCodePro-ExtraBold.ttf');
@@ -133,8 +133,8 @@ Boid.prototype.render = function() {
   rotate(theta);
   
   //indice 0 car .txt est un tableau
-  let tableau = result[0].split(",");
-  console.log(result);
+  let tableau = keywords[0].split(",");
+  console.log(tableau);
   
   //let names = floor(random(keyword));
   //let element = keyword[names];
